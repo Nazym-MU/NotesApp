@@ -12,13 +12,9 @@ The Notes App is a web application that allows users to manage their notes effic
 - **Edit Notes:** Existing notes can be edited to update their information or content.
 - **Delete Notes:** Users have the option to delete unwanted notes from their collection.
 
-## Usage
+## Video Walkthrough
 
-- **Creating a New Note:** Click on the "New note" button and fill in the required details.
-- **Viewing All Notes:** Navigate to the home page to see a list of all notes.
-- **Viewing Note Details:** Click on a note title to view its details.
-- **Editing a Note:** Click on the edit button next to a note to edit its content.
-- **Deleting a Note:** Click on the delete button next to a note to remove it from the list.
+YouTube: [https://youtu.be/OHAPZdPviX0]
 
 ## Technologies Used
 
@@ -29,10 +25,6 @@ The Notes App is a web application that allows users to manage their notes effic
 - HTML
 - CSS
 - JavaScript
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
