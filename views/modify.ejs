@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Note</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="title-container">
+        <h1 style="margin-top: 50px;">Edit Note</h1>
+    </div>
+    <div class="new-container">
+        <form action="/notes/<%= note.id %>" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" value="<%= note.title %>"><br>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content"><%= note.content %></textarea><br>
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author" value="<%= note.author %>"><br>
+            <label for="category">Category:</label><br>
+            <input type="text" id="category" name="category" value="<%= note.category %>"><br>
+            <label for="rating">Rating:</label><br>
+            <input type="number" id="rating" name="rating" min="1" max="5" value="<%= note.rating %>"><br>
+            <label for="date_created">Date finished:</label><br>
+            <input type="text" id="date_created" name="date_created" value="<%= new Date(note.date_created).toISOString().slice(0, 10) %>" placeholder="yyyy-mm-dd"><br>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail View</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+ 
+<body>
+    <div class="title-container">
+        <h2 style="margin-top: 100px;"><%= note.title %></h2>
+    </div>
+
+<div class="detail-container">
+    <p>
+        <i class="fas fa-calendar"></i> <%=note.date_created.toLocaleDateString('en-GB') %><br>
+        <i class="fas fa-star"></i> <%=note.rating%><br>
+        <i class="fas fa-user"></i> <%=note.author%><br>
+        <i class="fas fa-list-ul"></i> <%=note.category%><br>
+    </p>
+    
+    <hr>
+    <h3>Notes</h3><br>
+    <p><%- note.content.replace(/\n/g, '<br>') %></p>
+    
+    <div class="button-container">
+        <a href="/edit/<%= note.id %>" style="color: #333;"><i class="fas fa-edit"></i></a>
+        <a href="/delete/<%= note.id %>" style="color: #333;"><i class="fas fa-trash-alt"></i></a>
+    </div>
+</div>
+
+</body>
+</html>

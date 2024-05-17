@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+ 
+<body>
+    <div class="title-container">
+        <h1 style="margin-top: 50px;">Notes</h1>
+        <a id="newNoteBtn" class="title" href="/new">New note</a>
+    </div>
+
+    <div class="container">
+        <div class="left-section">
+            <h2>Podcasts</h2>
+            <ul id="podcastNotesList">
+                <% podcastNotes.forEach(note => { %>
+                    <a href="/detail/<%= note.id %>">
+                        <div class="note-container">
+                            <li>
+                            <div class="meta-info">
+                                <small>
+                                    <span class="title"><%= note.title %></span><br>
+                                    <span><i class="fas fa-star"></i> <%= note.rating %></span>
+                                    <span class="date"><i class="fas fa-calendar"></i> <%= note.date_created.toLocaleDateString('en-GB') %></span>
+                                    <span><i class="fas fa-user"></i> <%= note.author %></span>
+                                </small>
+                            </div>
+                            </li>
+                        </div>
+                    </a>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="right-section">
+            <h2>Other Notes</h2>
+            <ul id="otherNotesList">
+                <% otherNotes.forEach(note => { %>
+                    <a href="/detail/<%= note.id %>">
+                        <div class="note-container">
+                            <li>
+                            <div class="meta-info">
+                                <small>
+                                    <span class="title"><%= note.title %></span><br>
+                                    <span><i class="fas fa-star"></i> <%= note.rating %></span>
+                                    <span class="date"><i class="fas fa-calendar"></i> <%= note.date_created.toLocaleDateString('en-GB') %></span>
+                                    <span><i class="fas fa-user"></i> <%= note.author %></span>
+                                </small>
+                            </div>
+                            </li>
+                        </div>
+                    </a>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
